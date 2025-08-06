@@ -1,9 +1,17 @@
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar.jsx';
+import Home from './pages/Home.jsx';
+
+// This is the main application component that handles routing and global layout
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Culinary Compass
-    </h1>
-  )
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </>
+  );
 }
 
-export default App
+export default App;
