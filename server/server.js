@@ -5,6 +5,7 @@ require('dotenv').config();
 
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 // Import authentication routes for user login and registration
 const authRoutes = require('./routes/authRoutes');
@@ -16,6 +17,7 @@ const PORT = process.env.PORT || 5000;
 // Middleware to parse incoming JSON payloads from requests
 // This allows us to access data sent in the body of a POST request
 app.use(express.json());
+app.use(cors());
 
 // --- Database Connection ---
 // Use Mongoose to connect to the MongoDB database using the URI from the .env file.
